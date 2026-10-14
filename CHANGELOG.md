@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.2]
 
+### Added
+
+- **Copperwise Viewer** web app at https://neonrat85.github.io/Copperwise/, which
+  reads your saved data in the browser (source in `docs/`, served by GitHub Pages,
+  not included in the addon zip).
+
 ### Changed
 
 - **Updated for patch 12.1.5** (Interface 120105).
@@ -17,12 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Auction House commodity purchases could lose the item name: the fallback used
   the global `GetItemInfo`, whose deprecated alias was removed in 12.1.5. It now
   uses `C_Item.GetItemInfo`.
-
-
-### Added
-
-- **Copperwise Viewer** web app at https://neonrat85.github.io/Copperwise/
-  (source in `docs/`, served by GitHub Pages, not included in the addon zip).
 
 ## [1.0.1]
 
