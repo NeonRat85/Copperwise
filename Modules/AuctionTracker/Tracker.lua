@@ -234,13 +234,14 @@ function Tracker:OnPlaceBid(auctionID, bidAmount)
 end
 
 function Tracker:OnConfirmCommoditiesPurchase(itemID, quantity, unitPrice)
-    -- Resolve item name: C_Item.GetItemNameByID → GetItemInfo → fallback (like GoldPulse)
+    -- Resolve item name: C_Item.GetItemNameByID → C_Item.GetItemInfo → fallback.
+    -- The global GetItemInfo alias was removed in 12.1.5.
     local name = itemNameCache[itemID]
     if not name and _G.C_Item and _G.C_Item.GetItemNameByID then
         name = _G.C_Item.GetItemNameByID(itemID)
     end
-    if not name and _G.GetItemInfo then
-        name = _G.GetItemInfo(itemID)
+    if not name and _G.C_Item and _G.C_Item.GetItemInfo then
+        name = _G.C_Item.GetItemInfo(itemID)
     end
     if not name then
         name = "Item " .. tostring(itemID)
