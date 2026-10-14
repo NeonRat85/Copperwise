@@ -8,6 +8,7 @@ ignore:
   - .gitattributes
   - .gitignore
   - .pkgmeta
+  - CLAUDE.md
 
 manual-changelog:
   filename: CHANGELOG.md
